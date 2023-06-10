@@ -1,0 +1,334 @@
+{
+  "data": [
+    {
+      "id": "0fee434a-408b-4c20-ab60-5e925ff35340",
+      "year": "2019",
+      "data": [
+        {
+          "id": "f05cbc77-bc83-4295-852b-82813e2a95ea",
+          "pos": 1,
+          "team": "Mercedes",
+          "points": "739"
+        },
+        {
+          "id": "8e419074-848c-4fe6-b2c7-7880a00efed6",
+          "pos": 2,
+          "team": "Ferrari",
+          "points": "504"
+        },
+        {
+          "id": "5f8ca0f8-9caa-4645-af6d-51a84d14d59a",
+          "pos": 3,
+          "team": "Red Bull Racing Honda",
+          "points": "417"
+        },
+        {
+          "id": "6767090d-8f2b-44f4-857b-14d5afdcfcb3",
+          "pos": 4,
+          "team": "McLaren Renault",
+          "points": "145"
+        },
+        {
+          "id": "5ef62f45-e585-4647-867f-181e7772884f",
+          "pos": 5,
+          "team": "Renault",
+          "points": "91"
+        },
+        {
+          "id": "b22cf069-1cff-4f3a-be97-ed740f14704f",
+          "pos": 6,
+          "team": "Scuderia Toro Rosso Honda",
+          "points": "85"
+        },
+        {
+          "id": "fe4dc997-1b91-49d3-a6e7-dfa151fe23e7",
+          "pos": 7,
+          "team": "Racing Point BWT Mercedes",
+          "points": "73"
+        },
+        {
+          "id": "0fbd6e19-1376-4511-be84-afcee4acb8ae",
+          "pos": 8,
+          "team": "Alfa Romeo Racing Ferrari",
+          "points": "57"
+        },
+        {
+          "id": "87ced4d6-04c0-437f-bcc0-833e169fdce1",
+          "pos": 9,
+          "team": "Haas Ferrari",
+          "points": "28"
+        },
+        {
+          "id": "3385b0d3-ca5a-4ff7-9e47-a19bb62105e1",
+          "pos": 10,
+          "team": "Williams Mercedes",
+          "points": "1"
+        }
+      ]
+    },
+    {
+      "id": "1de41077-b87c-4c4b-8667-a1d69498b294",
+      "year": "2020",
+      "data": [
+        {
+          "id": "be27b4ca-ba9d-42d9-a79e-a6c487e6507f",
+          "pos": 1,
+          "team": "Mercedes",
+          "points": "573"
+        },
+        {
+          "id": "654a3433-3ed9-4fc1-b87b-45c46ee36c56",
+          "pos": 2,
+          "team": "Red Bull Racing Honda",
+          "points": "319"
+        },
+        {
+          "id": "9df69571-c4c1-42db-bc99-9d4accbb9aab",
+          "pos": 3,
+          "team": "McLaren Renault",
+          "points": "202"
+        },
+        {
+          "id": "70d6f30e-4c93-49b2-add6-b5451792d7f6",
+          "pos": 4,
+          "team": "Racing Point BWT Mercedes",
+          "points": "195"
+        },
+        {
+          "id": "c0984fe0-a104-49b5-9ac0-5b0efd672f15",
+          "pos": 5,
+          "team": "Renault",
+          "points": "181"
+        },
+        {
+          "id": "0e92beb3-02e2-4770-b235-3c2786b27ee8",
+          "pos": 6,
+          "team": "Ferrari",
+          "points": "131"
+        },
+        {
+          "id": "c9a5e2c4-af99-4065-91d8-d6c90fc2cdce",
+          "pos": 7,
+          "team": "AlphaTauri Honda",
+          "points": "107"
+        },
+        {
+          "id": "bea040b6-032b-429e-83ac-cca6d0c3e07a",
+          "pos": 8,
+          "team": "Alfa Romeo Racing Ferrari",
+          "points": "8"
+        },
+        {
+          "id": "6d17f5d9-fa1f-42a2-ae87-7fbfcbe74540",
+          "pos": 9,
+          "team": "Haas Ferrari",
+          "points": "3"
+        },
+        {
+          "id": "9be66ad0-3745-415f-a736-398a6a805ca5",
+          "pos": 10,
+          "team": "Williams Mercedes",
+          "points": "0"
+        }
+      ]
+    },
+    {
+      "id": "44e82099-4ed8-496b-b843-16773c572691",
+      "year": "2021",
+      "data": [
+        {
+          "id": "96387600-2741-49c3-a820-d64dadf0ce41",
+          "pos": 1,
+          "team": "Mercedes",
+          "points": "613.5"
+        },
+        {
+          "id": "09dd4fe6-8d4a-42ae-aa4a-6ed46c410886",
+          "pos": 2,
+          "team": "Red Bull Racing Honda",
+          "points": "585.5"
+        },
+        {
+          "id": "a61f3432-c2ed-40b9-b72a-7e78d96d0ffe",
+          "pos": 3,
+          "team": "Ferrari",
+          "points": "323.5"
+        },
+        {
+          "id": "475cdcc5-e5b8-4cd5-9e55-3c04d1888d5b",
+          "pos": 4,
+          "team": "McLaren Mercedes",
+          "points": "275"
+        },
+        {
+          "id": "fd6e2213-abf2-461d-846a-6126f5751ec5",
+          "pos": 5,
+          "team": "Alpine Renault",
+          "points": "155"
+        },
+        {
+          "id": "06c4fc81-86ac-48c8-b39b-70df77a12cdc",
+          "pos": 6,
+          "team": "AlphaTauri Honda",
+          "points": "142"
+        },
+        {
+          "id": "321c5e02-4318-4f7d-9cf7-b7450c94ad3a",
+          "pos": 7,
+          "team": "Aston Martin Mercedes",
+          "points": "77"
+        },
+        {
+          "id": "983c879b-0cb5-4c1c-a79e-7eeaa988f4f1",
+          "pos": 8,
+          "team": "Williams Mercedes",
+          "points": "23"
+        },
+        {
+          "id": "00a74658-ffa1-402c-bf9b-bbfe1203913e",
+          "pos": 9,
+          "team": "Alfa Romeo Racing Ferrari",
+          "points": "13"
+        },
+        {
+          "id": "b1f6087b-b137-46ae-b021-d9d8cd8c8668",
+          "pos": 10,
+          "team": "Haas Ferrari",
+          "points": "0"
+        }
+      ]
+    },
+    {
+      "id": "2b4a559d-142b-4ced-9341-4638b8d6d349",
+      "year": "2022",
+      "data": [
+        {
+          "id": "d8e3b4c0-bdbc-4e38-8906-e414652aca3e",
+          "pos": 1,
+          "team": "Red Bull Racing RBPT",
+          "points": "759"
+        },
+        {
+          "id": "0fdf3d20-7492-4360-9290-69a338c1cfc4",
+          "pos": 2,
+          "team": "Ferrari",
+          "points": "554"
+        },
+        {
+          "id": "b790de7c-2728-4d0c-b604-5c6501a348bb",
+          "pos": 3,
+          "team": "Mercedes",
+          "points": "515"
+        },
+        {
+          "id": "8964f9f4-c10a-4947-ac77-f269bac8d2a8",
+          "pos": 4,
+          "team": "Alpine Renault",
+          "points": "173"
+        },
+        {
+          "id": "d33abddd-0983-4091-a755-20bb8b88b863",
+          "pos": 5,
+          "team": "McLaren Mercedes",
+          "points": "159"
+        },
+        {
+          "id": "e9ed75c1-ff90-437f-a9de-07951cf24001",
+          "pos": 6,
+          "team": "Alfa Romeo Ferrari",
+          "points": "55"
+        },
+        {
+          "id": "a450c9e9-2e50-4681-a377-5d1baff3ff40",
+          "pos": 7,
+          "team": "Aston Martin Aramco Mercedes",
+          "points": "55"
+        },
+        {
+          "id": "cee97bff-c91c-4ca3-814e-73dc8f5d0006",
+          "pos": 8,
+          "team": "Haas Ferrari",
+          "points": "37"
+        },
+        {
+          "id": "fd48529a-e5ef-4e6a-bc45-a1847b9f3a71",
+          "pos": 9,
+          "team": "AlphaTauri RBPT",
+          "points": "35"
+        },
+        {
+          "id": "da2da7d5-7bfa-454a-8268-12748d37e9d9",
+          "pos": 10,
+          "team": "Williams Mercedes",
+          "points": "8"
+        }
+      ]
+    },
+    {
+      "id": "a5cc6bcc-8661-4818-8bad-347138fb4293",
+      "year": "2023",
+      "data": [
+        {
+          "id": "6d32d1c3-0ffc-40bd-b2ea-136016822225",
+          "pos": 1,
+          "team": "Red Bull Racing Honda RBPT",
+          "points": "287"
+        },
+        {
+          "id": "881bcb26-41e6-4550-8650-352de85b2283",
+          "pos": 2,
+          "team": "Mercedes",
+          "points": "152"
+        },
+        {
+          "id": "5b395a1b-eff3-4df3-9556-054f88880b0d",
+          "pos": 3,
+          "team": "Aston Martin Aramco Mercedes",
+          "points": "134"
+        },
+        {
+          "id": "7aae08d9-3821-40fa-8a0b-521bb9d95cf8",
+          "pos": 4,
+          "team": "Ferrari",
+          "points": "100"
+        },
+        {
+          "id": "c67d4029-76bb-4825-a82c-d4a332b6dc68",
+          "pos": 5,
+          "team": "Alpine Renault",
+          "points": "40"
+        },
+        {
+          "id": "8c1b3776-cf00-4f37-a49f-5db97cc7ddc1",
+          "pos": 6,
+          "team": "McLaren Mercedes",
+          "points": "17"
+        },
+        {
+          "id": "ced00ae7-4f9e-468f-96fb-e9105a9bc631",
+          "pos": 7,
+          "team": "Haas Ferrari",
+          "points": "8"
+        },
+        {
+          "id": "a4c13d41-4b43-45f0-8be1-04027131cc84",
+          "pos": 8,
+          "team": "Alfa Romeo Ferrari",
+          "points": "8"
+        },
+        {
+          "id": "43ac673f-2978-47d0-a8fd-d4403e16c7df",
+          "pos": 9,
+          "team": "AlphaTauri Honda RBPT",
+          "points": "2"
+        },
+        {
+          "id": "f5624091-14b6-454a-92ad-74994d2cfff2",
+          "pos": 10,
+          "team": "Williams Mercedes",
+          "points": "1"
+        }
+      ]
+    }
+  ]
+}
