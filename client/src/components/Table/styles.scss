@@ -1,0 +1,39 @@
+.table {
+  overflow-x: auto;
+  background-color: #FFF;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+  &--nodata {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    text-align: left;
+
+    tr:nth-child(odd) {
+      background-color: #f8f8f8;
+    }
+
+    th {
+        font-size: 1rem;
+        padding: 14px 10px;
+        color: #6B58BC;
+        background-color: #FFF;
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+
+    td {
+      padding: 8px 10px;
+      font-size: .9rem;
+    }
+  }
+}

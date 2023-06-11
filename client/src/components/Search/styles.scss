@@ -1,0 +1,86 @@
+.search {
+  position: relative;
+  
+  & > input {
+    padding: 10px 10px 10px 28px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    color: #707070;
+    box-shadow: rgba(119, 77, 255, 0.16) 0px 1px 4px;
+    font-family: "Urbanist", Inter, system-ui, Avenir, Helvetica, Arial,
+      sans-serif;
+
+    &:focus {
+      box-shadow: rgba(57, 0, 243, 0.16) 0px 2px 8px;
+    }
+  }
+
+  &_icon {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+  }
+
+  &_result {
+    width: 100%;
+    max-height: 500px;
+    overflow-y: auto;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    border-radius: 8px;
+    background: #f5f7fa;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+    &_item {
+      display: flex;
+      align-items: center;
+      padding: 5px 8px;
+      background-color: #fff;
+      margin: 5px;
+      border-radius: 8px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #efd5ff;
+      }
+
+      &_avata {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        background-size: contain;
+        background-position: top;
+      }
+
+      &_text {
+        margin-left: 10px;
+        & > h3 {
+          font-size: 0.9rem;
+          font-weight: 600;
+        }
+
+        & > h4 {
+          font-size: 0.7rem;
+          font-weight: 400;
+        }
+      }
+    }
+
+    &_noData {
+      background-color: #FFF;
+      padding: 10px;
+
+      & > p {
+        font-style: italic;
+        font-weight: 500;
+        font-size: .9rem;
+        color: #707070;
+      }
+    }
+  }
+}

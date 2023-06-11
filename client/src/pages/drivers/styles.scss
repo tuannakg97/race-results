@@ -1,0 +1,43 @@
+.drivers {
+  background-color: #f5f7fa;
+
+  &_years {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &_cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+  }
+
+  &_table {
+    margin: 20px 0;
+  }
+}
+
+@media all and (max-width: 877px) {
+  .drivers {
+      &_cards {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+  }
+}
+
+@media all and (max-width: 711px) {
+  .drivers {
+      &_cards {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      }
+  }
+}
+
+@media all and (max-width: 544px) {
+  .drivers {
+      &_cards {
+        grid-template-columns: 1fr;
+      }
+  }
+}
