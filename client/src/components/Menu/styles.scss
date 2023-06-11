@@ -1,0 +1,25 @@
+.menu {
+    display: flex;
+    list-style: none;
+
+    &_item {
+        padding: 20px 10px;
+        margin: 0 5px;
+        color: #ADADAD;
+        font-weight: 400;
+        font-size: .9rem;
+        text-transform: capitalize;
+        transition: all .2s ease-in-out;
+        border-bottom: 2px solid transparent;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &--active {
+            border-bottom: 2px solid #6032F4;
+            color: #6032F4;
+            font-weight: bold;
+        }
+    }
+}

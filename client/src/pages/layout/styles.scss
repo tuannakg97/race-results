@@ -1,0 +1,30 @@
+.layout {
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f7fa;
+
+  &_header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  &_content {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 20px;
+  }
+}
+
+@media all and (max-width: 940px) {
+  .layout {
+    &_content {
+      max-width: 90%;
+    }
+  }
+}

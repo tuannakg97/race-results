@@ -1,0 +1,118 @@
+.driverInfo {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 20px;
+  margin-bottom: 20px;
+
+  &_left {
+    &_img {
+      $bg: rgba(183, 0, 255, 0.17);
+      width: 100%;
+      height: 100%;
+      background-size: 760px 800px;
+      background-position: top;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: rgb(132, 0, 255) 3px 3px 6px 0px inset,
+        rgba(151, 5, 255, 0.8) -3px -3px 10px 1px inset;
+    }
+  }
+
+  &_right {
+    &_details {
+      padding: 15px;
+      background-color: #fff;
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+      border-radius: 10px;
+
+      &--enable-md {
+        display: none;
+        align-items: center;
+        margin-bottom: 20px;
+        & > img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50px;
+          margin-right: 20px;
+        }
+        & > div > h1 {
+          color: rgb(144, 0, 255);
+        }
+        & > div > h3 {
+          margin-top: 8px;
+          font-size: 1rem;
+        }
+        & > div > h4 {
+          font-weight: 400;
+          font-style: italic;
+        }
+      }
+
+      &--disable-md {
+        & > h1 {
+          color: rgb(144, 0, 255);
+        }
+      }
+
+      &_item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 10px 0;
+      }
+    }
+
+    &_chart {
+      margin-top: 20px;
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    }
+  }
+}
+
+@media all and (max-width: 745px) {
+  .driverInfo {
+    grid-template-columns: 1fr;
+
+    &_left {
+      &_img {
+        display: none;
+      }
+    }
+
+    &_right {
+      &_details {
+        &--enable-md {
+          display: flex;
+        }
+        &--disable-md {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 500px) {
+  .driverInfo {
+
+    &_right {
+      &_details {
+        &--enable-md {
+          & > div > h1 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+      &_chart {
+        padding: 5px;
+      }
+    }
+  }
+}
