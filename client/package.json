@@ -10,7 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "8.8.1",
+    "@react-three/fiber": "7.0.25",
+    "@types/three": "0.136.1",
     "@reduxjs/toolkit": "^1.9.5",
+    "lamina": "1.0.1",
+    "leva": "0.9.18",
     "apexcharts": "^3.41.0",
     "clsx": "^1.2.1",
     "delay": "^6.0.0",
@@ -19,7 +24,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
     "react-redux": "^8.0.7",
-    "use-debounce": "^9.0.4"
+    "use-debounce": "^9.0.4",
+    "three": "0.137.5"
   },
   "devDependencies": {
     "@types/node": "^20.2.6",

@@ -1,11 +1,17 @@
-import React from "react";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 
-function MixedChart({ categories, barSeries, lineSeries }) {
+interface MixedChartProps {
+  categories: Array<string>;
+  barSeries: Array<number | string>;
+  lineSeries: Array<number | string>;
+}
+
+function MixedChart({ categories, barSeries, lineSeries }: MixedChartProps) {
   const optimalColumnWidthPercent =
     35 + 60 / (1 + 30 * Math.exp(-categories.length / 3));
   const options: ApexOptions = {
+    colors: ["#6f03fc", "#fc03be"],
     chart: {
       height: 350,
       type: "line",
@@ -16,9 +22,9 @@ function MixedChart({ categories, barSeries, lineSeries }) {
     title: {
       text: "Driver Analysis",
       style: {
-        fontSize: '23px',
-        color: 'rgb(144, 0, 255)'
-      }
+        fontSize: "23px",
+        color: "rgb(144, 0, 255)",
+      },
     },
     dataLabels: {
       enabled: true,
@@ -52,7 +58,8 @@ function MixedChart({ categories, barSeries, lineSeries }) {
     ],
   };
 
-  const seriesD = [
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const seriesD : any = [
     {
       name: "Points",
       type: "column",

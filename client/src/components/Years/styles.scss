@@ -6,27 +6,32 @@
   justify-content: space-between;
 
   &_item {
-    border: 1px solid rgb(212, 212, 212);
+    border: 1px solid rgb(144, 0, 255);
     margin-right: 10px;
     font-size: 0.8rem;
     padding: 2px 15px;
     border-radius: 15px;
     letter-spacing: 2px;
-    color: rgb(212, 212, 212);
+    color: rgb(144, 0, 255);
     font-weight: 600;
-    background-color: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(144, 0, 255, 0.3);
     display: flex;
     align-items: center;
-    transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 
     &:hover {
-        cursor: pointer;
+      cursor: pointer;
     }
 
     &--active {
-    background-color: rgb(144, 0, 255);
-    color: #FFF;
-    padding: 2px 15px 2px 5px;
+      background-color: rgb(144, 0, 255);
+      color: #fff;
+      padding: 2px 15px 2px 5px;
     }
 
     &_check {
