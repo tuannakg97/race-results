@@ -19,6 +19,7 @@ async function getDriversData(years) {
     if (!pageHTML) continue;
     const $ = cheerio.load(pageHTML.data);
 
+    //*  Truy cập vào thẻ chứa đata
     await $("table > tbody > tr").each((index, element) => {
       const $$ = cheerio.load(element);
       const lastName = $$("span.hide-for-tablet").prop("innerText");
