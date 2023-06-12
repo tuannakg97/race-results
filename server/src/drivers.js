@@ -4,19 +4,11 @@ const { v4: uuidv4 } = require("uuid");
 
 async function getDriversData(years) {
   console.log("-------> Getting Driver Data....");
-
-  // initialized with the first webpage to visit
-
-  const visitedURLs = [];
   const data = [];
   const setNames = new Set();
 
-  // iterating until the queue is empty
-  // or the iteration limit is hit
   for (const year of years) {
     const yearData = { id: uuidv4(), year, data: [] };
-
-    // retrieving the HTML content from paginationURL
     let pageHTML;
     try {
       pageHTML = await axios.get(
@@ -25,11 +17,8 @@ async function getDriversData(years) {
     } catch (err) {}
 
     if (!pageHTML) continue;
-
-    // initializing cheerio on the current webpage
     const $ = cheerio.load(pageHTML.data);
 
-    // retrieving the product URLs
     await $("table > tbody > tr").each((index, element) => {
       const $$ = cheerio.load(element);
       const lastName = $$("span.hide-for-tablet").prop("innerText");

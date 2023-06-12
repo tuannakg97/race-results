@@ -3,7 +3,7 @@ import { createListDataFromKey } from "./helper";
 
 const getDriversByYear = (year: string) => {
   const result = data.data.find((driverData) => driverData.year === year);
-  return result;
+  return result || {data: []};
 };
 
 const analysticDriverByName = (name: string) => {

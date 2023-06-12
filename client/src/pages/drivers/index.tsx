@@ -7,6 +7,7 @@ import { getDriversByYear } from "@/utils/queryDrivers";
 import { getDriverInfo } from "@/utils/queryDriverInfo";
 import Years from "@/components/Years";
 import { RootState } from "@/redux/";
+import { IDriver } from "@/constants/interfaces";
 
 const columns = [
   {
@@ -29,7 +30,7 @@ const columns = [
 
 function DriversPage() {
   const yearValue = useSelector((state: RootState) => state.year.value);
-  const { data }: any = getDriversByYear(yearValue);
+  const { data }: {data: Array<IDriver>} = getDriversByYear(yearValue);
   const len = data.length;
   const topNumber = 3;
   const top = data.slice(0, topNumber);

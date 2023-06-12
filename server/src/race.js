@@ -5,13 +5,10 @@ const moment = require("moment");
 
 async function getRaceData(years) {
   console.log("-------> Getting Race Data....");
-  // initialized with the first webpage to visit
   const data = [];
 
   for await (const year of years) {
     const yearData = { id: uuidv4(), year, data: [] };
-
-    // retrieving the HTML content from paginationURL
     let pageHTML;
 
     try {
@@ -21,11 +18,8 @@ async function getRaceData(years) {
     } catch (err) {}
 
     if (!pageHTML) continue;
-
-    // initializing cheerio on the current webpage
     const $ = cheerio.load(pageHTML.data);
 
-    // retrieving the product URLs
     await $("table > tbody > tr").each((index, element) => {
       const $$ = cheerio.load(element);
       const grandPrix = $$("a.dark.bold.ArchiveLink").prop("innerHTML");

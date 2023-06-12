@@ -4,6 +4,7 @@ import top2 from "@/assets/top2.png";
 import top3 from "@/assets/top3.png";
 import "./styles.scss";
 import clsx from "clsx";
+import { defaultImage } from "@/constants/images";
 
 interface MediumCardProps {
   title: string | React.ReactNode;
@@ -18,7 +19,7 @@ function Card({
   title,
   subtitle,
   primary,
-  imgUrl = "https://as1.ftcdn.net/v2/jpg/03/21/62/96/1000_F_321629644_lC8nXfiPOm31JdrzO5vdRTaCrCuFjAiL.jpg",
+  imgUrl = defaultImage,
   children,
   pos,
 }: MediumCardProps) {

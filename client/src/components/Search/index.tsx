@@ -9,18 +9,20 @@ import { useDispatch } from "react-redux";
 import { change } from "@/redux/driverSlice";
 import "./styles.scss";
 import ResultItem from "./ResultItem";
+import {IDriverInfo} from '@/constants/interfaces';
 
-interface SearchProps {
-  onBlur?: () => void;
+type content = {
+  onBlur?: () => void,
 }
 
-const Search = React.forwardRef<HTMLInputElement>(
-  ({ onBlur }: SearchProps, ref) => {
+
+const Search = React.forwardRef<HTMLInputElement, content>(
+  (props, ref) => {
     const driverValue = useSelector((state: RootState) => state.driver.value);
     const [text, setText] = useState(driverValue);
     const [value] = useDebounce(text, 500);
     const dispatch = useDispatch();
-    const [result, setResult] = useState<Array<any>>([]);
+    const [result, setResult] = useState<IDriverInfo[]>([]);
     const [showResult, setShowResult] = useState(false);
 
     useEffect(() => {
@@ -28,7 +30,7 @@ const Search = React.forwardRef<HTMLInputElement>(
         setResult([]);
         return;
       }
-      const data = getDriverInfo(value);
+      const data: IDriverInfo[] = getDriverInfo(value);
       setResult(data);
     }, [value]);
 
@@ -47,7 +49,7 @@ const Search = React.forwardRef<HTMLInputElement>(
           onBlur={async () => {
             await delay(200);
             setShowResult(false);
-            if (onBlur) onBlur();
+            if (props?.onBlur) props.onBlur();
           }}
           placeholder="Search driver by name or team..."
         />
@@ -57,13 +59,16 @@ const Search = React.forwardRef<HTMLInputElement>(
         {value && showResult ? (
           <div className="search_result">
             {result.length ? (
-              result.map(({ imgUrl, driverName, team, id }) => (
+              result.map(({ imgUrl, driverName, team, id }: IDriverInfo) => (
                 <ResultItem
                   key={id}
                   imgUrl={imgUrl}
                   title={driverName}
                   subtitle={team}
-                  onClick={() => dispatch(change(driverName))}
+                  onClick={() => {
+                    if(driverName === undefined) return;
+                    dispatch(change(driverName));
+                  }}
                 />
               ))
             ) : (

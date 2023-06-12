@@ -6,7 +6,6 @@ import Search from "../Search";
 import "./styles.scss";
 
 function Header() {
-  // You can now get a ref directly to the DOM button:
   const ref = useRef<HTMLInputElement>(null);
   const [showSearchInput, setShowSearchInput] = useState(false);
 
