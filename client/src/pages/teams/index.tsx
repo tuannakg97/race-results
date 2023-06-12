@@ -6,6 +6,7 @@ import "./styles.scss";
 import { getTeamsByYear } from "@/utils/queryTeams";
 import Years from "@/components/Years";
 import { RootState } from "@/redux/";
+import { ITeam } from "@/constants/interfaces";
 
 
 const columns = [
@@ -25,7 +26,7 @@ const columns = [
 
 function TeamsPage() {
   const yearValue = useSelector((state: RootState) => state.year.value);
-  const { data }: any = getTeamsByYear(yearValue);
+  const { data }: {data: ITeam[]} = getTeamsByYear(yearValue);
   const len = data.length;
   const topNumber = 3;
   const top = data.slice(0, topNumber);

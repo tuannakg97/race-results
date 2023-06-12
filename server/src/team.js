@@ -3,14 +3,11 @@ const cheerio = require("cheerio");
 const { v4: uuidv4 } = require("uuid");
 
 async function getTeamData(years) {
-  // initialized with the first webpage to visit
   console.log("-------> Getting Teams Data....");
   const data = [];
 
   for (const year of years) {
     const yearData = { id: uuidv4(), year, data: [] };
-
-    // retrieving the HTML content from paginationURL
     let pageHTML;
 
     try {
@@ -20,11 +17,7 @@ async function getTeamData(years) {
     } catch (err) {}
 
     if (!pageHTML) continue;
-
-    // initializing cheerio on the current webpage
     const $ = cheerio.load(pageHTML.data);
-
-    // retrieving the product URLs
     await $("table > tbody > tr").each((index, element) => {
       const $$ = cheerio.load(element);
       const team = $$("td > a.dark.bold.uppercase.ArchiveLink").prop(

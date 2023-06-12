@@ -5,11 +5,12 @@ import { RootState } from "@/redux/";
 import { getRacesByYear } from "@/utils/queryRaces";
 import { useSelector } from "react-redux";
 import "./styles.scss";
+import { IRace } from "@/constants/interfaces";
 
 
 function RacesPage() {
   const yearValue = useSelector((state: RootState) => state.year.value);
-  const { data }: any = getRacesByYear(yearValue);
+  const { data }: {data: IRace[]} = getRacesByYear(yearValue);
 
   return (
     <div className="races">

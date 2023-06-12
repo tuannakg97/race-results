@@ -1,7 +1,7 @@
 interface ResultItemProps {
-  imgUrl: string;
-  title: string;
-  subtitle: string;
+  imgUrl: string | undefined;
+  title: string | undefined;
+  subtitle: string | undefined;
   onClick: () => void;
 }
 

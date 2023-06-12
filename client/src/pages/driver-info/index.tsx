@@ -4,20 +4,28 @@ import { getDriverInfo } from "@/utils/queryDriverInfo";
 import { analysticDriverByName } from "@/utils/queryDrivers";
 import { useSelector } from "react-redux";
 import "./styles.scss";
+import { IDriverInfo } from "@/constants/interfaces";
+import { defaultImage } from "@/constants/images";
 
-const Item = ({ title, value }) => (
+const Item = ({ title, value }: { title: string; value?: string | number }) => (
   <div className="driverInfo_right_details_item">
     <h4>{title}:</h4>
     <p>{value}</p>
   </div>
 );
 
-const convertData = (data) => {
-  const categories: any = [];
-  const lineSeries: any = [];
-  const barSeries: any = [];
+interface ConvertProps extends IDriverInfo {
+  value: number;
+  year: string;
+  pos: number;
+}
 
-  data.forEach(({ value, year, pos }) => {
+const convertData = (data: ConvertProps[]) => {
+  const categories: string[] = [];
+  const lineSeries: number[] = [];
+  const barSeries: number[] = [];
+
+  data.forEach(({ value, year, pos }: ConvertProps) => {
     categories.push(year);
     barSeries.push(value);
     lineSeries.push(pos);
@@ -31,8 +39,10 @@ const convertData = (data) => {
 };
 
 function DriverInfo() {
-  const driverName = useSelector((state: RootState) => state.driver.value);
-  const driverInfo = getDriverInfo(driverName)[0];
+  const driverName: string = useSelector(
+    (state: RootState) => state.driver.value
+  );
+  const driverInfo: IDriverInfo = getDriverInfo(driverName)[0];
   const {
     imgUrl,
     dateofBirth,
@@ -45,7 +55,7 @@ function DriverInfo() {
     highestGridPosition,
     team,
   } = driverInfo;
-  const data = analysticDriverByName(driverName);
+  const data: ConvertProps[] = analysticDriverByName(driverName);
   const { categories, barSeries, lineSeries } = convertData(data);
 
   return (
@@ -53,7 +63,9 @@ function DriverInfo() {
       <div className="driverInfo_left">
         <div
           className="driverInfo_left_img"
-          style={{ backgroundImage: `url(${imgUrl || 'https://as1.ftcdn.net/v2/jpg/03/21/62/96/1000_F_321629644_lC8nXfiPOm31JdrzO5vdRTaCrCuFjAiL.jpg'})` }}
+          style={{
+            backgroundImage: `url(${imgUrl || defaultImage})`,
+          }}
         ></div>
       </div>
 
@@ -62,9 +74,9 @@ function DriverInfo() {
           <div className="driverInfo_right_details--enable-md">
             <img src={imgUrl} alt="avata" />
             <div>
-            <h1>{driverName}</h1>
-            <h3>{dateofBirth}</h3>
-            <h4>{placeofBirth}</h4>
+              <h1>{driverName}</h1>
+              <h3>{dateofBirth}</h3>
+              <h4>{placeofBirth}</h4>
             </div>
           </div>
 

@@ -17,21 +17,13 @@ const infoList = [
 
 async function getDriversInfoData(driverNames) {
   console.log("-------> Getting Info Driver Data....");
-
-  // initialized with the first webpage to visit
-
-  const visitedURLs = [];
   const data = [];
 
-  // iterating until the queue is empty
-  // or the iteration limit is hit
   for (const driverName of driverNames) {
     console.log(driverName);
     const slugName = driverName.trim().toLowerCase().replaceAll(" ", "-");
     const driverInfo = { id: uuidv4(), driverName };
-    // the current webpage to crawl
 
-    // retrieving the HTML content from paginationURL
     let pageHTML;
     try {
       pageHTML = await axios.get(
@@ -41,13 +33,11 @@ async function getDriversInfoData(driverNames) {
 
     if (!pageHTML) continue;
 
-    // initializing cheerio on the current webpage
     const $ = cheerio.load(pageHTML.data);
 
     const imgUrl = $("div.fom-adaptiveimage")?.prop("data-path");
     driverInfo.imgUrl = imgUrl;
 
-    // retrieving the product URLs
     await $("table.stat-list > tbody > tr").each((index, element) => {
       const $$ = cheerio.load(element);
 
