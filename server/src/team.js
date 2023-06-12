@@ -18,6 +18,8 @@ async function getTeamData(years) {
 
     if (!pageHTML) continue;
     const $ = cheerio.load(pageHTML.data);
+
+    //*  Truy cập vào thẻ chứa đata
     await $("table > tbody > tr").each((index, element) => {
       const $$ = cheerio.load(element);
       const team = $$("td > a.dark.bold.uppercase.ArchiveLink").prop(

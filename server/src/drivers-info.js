@@ -35,6 +35,7 @@ async function getDriversInfoData(driverNames) {
 
     const $ = cheerio.load(pageHTML.data);
 
+    //*  Truy cập vào thẻ chứa đata
     const imgUrl = $("div.fom-adaptiveimage")?.prop("data-path");
     driverInfo.imgUrl = imgUrl;
 
