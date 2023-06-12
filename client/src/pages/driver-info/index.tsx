@@ -1,10 +1,9 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import BarChart from "@/components/Chart/Mixed";
 import { RootState } from "@/redux/";
 import { getDriverInfo } from "@/utils/queryDriverInfo";
 import { analysticDriverByName } from "@/utils/queryDrivers";
+import { useSelector } from "react-redux";
 import "./styles.scss";
-import BarChart from "@/components/Chart/Mixed";
 
 const Item = ({ title, value }) => (
   <div className="driverInfo_right_details_item">
@@ -54,7 +53,7 @@ function DriverInfo() {
       <div className="driverInfo_left">
         <div
           className="driverInfo_left_img"
-          style={{ backgroundImage: `url(${imgUrl})` }}
+          style={{ backgroundImage: `url(${imgUrl || 'https://as1.ftcdn.net/v2/jpg/03/21/62/96/1000_F_321629644_lC8nXfiPOm31JdrzO5vdRTaCrCuFjAiL.jpg'})` }}
         ></div>
       </div>
 

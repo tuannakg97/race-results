@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import "./styles.scss";
 import Header from "@/components/Header";
+import Background from "@/components/Background";
 
 interface Props {
   children: ReactNode;
@@ -9,6 +10,9 @@ interface Props {
 const Layout: React.FC<Props> = ({ children }) => {
   return (
     <div className="layout">
+      <div style={{position: 'absolute', width: '100%', height: '100%', zIndex: -1}}>
+      <Background />
+      </div>
       <div className="layout_header">
         <Header />
       </div>

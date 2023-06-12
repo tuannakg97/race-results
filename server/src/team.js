@@ -4,23 +4,22 @@ const { v4: uuidv4 } = require("uuid");
 
 async function getTeamData(years) {
   // initialized with the first webpage to visit
-  console.log('-------> Getting Teams Data....');
-  const visitedURLs = [];
+  console.log("-------> Getting Teams Data....");
   const data = [];
 
-
   for (const year of years) {
-
     const yearData = { id: uuidv4(), year, data: [] };
-    // the current webpage to crawl
-    const paginationURL = `https://www.formula1.com/en/results.html/${year}/team.html`
 
     // retrieving the HTML content from paginationURL
-    const pageHTML = await axios.get(paginationURL);
+    let pageHTML;
 
-    // adding the current webpage to the
-    // web pages already crawled
-    visitedURLs.push(paginationURL);
+    try {
+      pageHTML = await axios.get(
+        `https://www.formula1.com/en/results.html/${year}/team.html`
+      );
+    } catch (err) {}
+
+    if (!pageHTML) continue;
 
     // initializing cheerio on the current webpage
     const $ = cheerio.load(pageHTML.data);
@@ -28,7 +27,9 @@ async function getTeamData(years) {
     // retrieving the product URLs
     await $("table > tbody > tr").each((index, element) => {
       const $$ = cheerio.load(element);
-      const team = $$("td > a.dark.bold.uppercase.ArchiveLink").prop("innerHTML");
+      const team = $$("td > a.dark.bold.uppercase.ArchiveLink").prop(
+        "innerHTML"
+      );
       const points = $$("td.dark.bold").prop("innerHTML");
 
       yearData.data.push({
@@ -41,10 +42,10 @@ async function getTeamData(years) {
     console.log(year);
     data.push(yearData);
   }
-  console.log('-------> Get Teams Data successfully!');
+  console.log("-------> Get Teams Data successfully!");
   return data;
 }
 
 module.exports = {
-    getTeamData,
+  getTeamData,
 };

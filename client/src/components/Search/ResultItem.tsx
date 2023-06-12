@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ResultItemProps {
   imgUrl: string;
   title: string;
@@ -12,7 +10,7 @@ function ResultItem({ imgUrl, title, subtitle, onClick }: ResultItemProps) {
     <div className="search_result_item" onClick={onClick}>
       <div
         className="search_result_item_avata"
-        style={{ backgroundImage: `url(${imgUrl})` }}
+        style={{ backgroundImage: `url(${imgUrl || 'https://as1.ftcdn.net/v2/jpg/03/21/62/96/1000_F_321629644_lC8nXfiPOm31JdrzO5vdRTaCrCuFjAiL.jpg'})` }}
       ></div>
 
       <div className="search_result_item_text">

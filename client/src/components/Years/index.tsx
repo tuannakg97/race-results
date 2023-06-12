@@ -1,10 +1,9 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/";
-import { BsCheckLg } from "react-icons/bs";
 import { change } from "@/redux/yearSlice";
-import "./styles.scss";
 import clsx from "clsx";
+import { BsCheckLg } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
+import "./styles.scss";
 
 const years = ["2019", "2020", "2021", "2022", "2023"];
 

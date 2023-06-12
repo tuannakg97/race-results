@@ -1,10 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
-import { FaHackerrank } from "react-icons/fa";
 import Logo from "@/assets/logo-trans.png";
-import Search from "../Search";
-import "./styles.scss";
+import { useEffect, useRef, useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import Menu from "../Menu";
+import Search from "../Search";
+import "./styles.scss";
 
 function Header() {
   // You can now get a ref directly to the DOM button:

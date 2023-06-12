@@ -1,26 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import MediumCard from "@/components/Card";
-import Table from "@/components/Table";
-import { useSelector } from "react-redux";
-import "./styles.scss";
-import { getRacesByYear } from "@/utils/queryRaces";
 import Years from "@/components/Years";
 import { RootState } from "@/redux/";
+import { getRacesByYear } from "@/utils/queryRaces";
+import { useSelector } from "react-redux";
+import "./styles.scss";
 
-const columns = [
-  {
-    name: "pos",
-    keyData: "pos",
-  },
-  {
-    name: "team",
-    keyData: "team",
-  },
-  {
-    name: "points",
-    keyData: "points",
-  },
-];
 
 function RacesPage() {
   const yearValue = useSelector((state: RootState) => state.year.value);

@@ -1,30 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import "./styles.scss";
 
-const columns = [
-  {
-    name: "First name",
-    keyData: "firstName",
-  },
-  {
-    name: "Last name",
-    keyData: "lastName",
-  },
-];
-
-const data = [
-  {
-    id: 1,
-    firstName: "Teo",
-    lastName: "Nguyen",
-  },
-  {
-    id: 2,
-    firstName: "Hung",
-    lastName: "Tran",
-  },
-];
-
 interface TableProps {
   columns: Array<any>;
   data: Array<any>;

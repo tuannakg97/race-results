@@ -3,29 +3,28 @@ const cheerio = require("cheerio");
 const { v4: uuidv4 } = require("uuid");
 
 async function getDriversData(years) {
-  console.log('-------> Getting Driver Data....');
+  console.log("-------> Getting Driver Data....");
 
   // initialized with the first webpage to visit
 
   const visitedURLs = [];
   const data = [];
+  const setNames = new Set();
 
   // iterating until the queue is empty
   // or the iteration limit is hit
   for (const year of years) {
-    const paginationURLsToVisit = [
-      `https://www.formula1.com/en/results.html/${year}/drivers.html`,
-    ];
     const yearData = { id: uuidv4(), year, data: [] };
-    // the current webpage to crawl
-    const paginationURL = paginationURLsToVisit.pop();
 
     // retrieving the HTML content from paginationURL
-    const pageHTML = await axios.get(paginationURL);
+    let pageHTML;
+    try {
+      pageHTML = await axios.get(
+        `https://www.formula1.com/en/results.html/${year}/drivers.html`
+      );
+    } catch (err) {}
 
-    // adding the current webpage to the
-    // web pages already crawled
-    visitedURLs.push(paginationURL);
+    if (!pageHTML) continue;
 
     // initializing cheerio on the current webpage
     const $ = cheerio.load(pageHTML.data);
@@ -39,10 +38,12 @@ async function getDriversData(years) {
         "innerText"
       );
       const point = $$("td.dark.bold").prop("innerText");
+      const name = `${lastName} ${firstName}`;
+      setNames.add(name);
       yearData.data.push({
         id: uuidv4(),
         pos: index + 1,
-        name: `${lastName} ${firstName}`,
+        name,
         team,
         point,
       });
@@ -50,8 +51,9 @@ async function getDriversData(years) {
     console.log(year);
     data.push(yearData);
   }
-  console.log('-------> Get Drivers Data successfully!');
-  return data;
+  console.log("-------> Get Drivers Data successfully!");
+  const driverNames = Array.from(setNames);
+  return { data, driverNames };
 }
 
 module.exports = {

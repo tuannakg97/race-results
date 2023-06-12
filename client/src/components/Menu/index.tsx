@@ -1,10 +1,9 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/";
-import { change as ChangeMenu } from "@/redux/menuSlice";
 import { change as changeDriver } from "@/redux/driverSlice";
-import "./styles.scss";
+import { change as ChangeMenu } from "@/redux/menuSlice";
 import clsx from "clsx";
+import { useDispatch, useSelector } from "react-redux";
+import "./styles.scss";
 
 const menuItems = [
   {
